@@ -4,7 +4,7 @@ A multi-rail DC power supply that runs from 220 VAC mains: a transformer and bri
 
 **Status:** Simulation complete. Schematic and PCB layout done in Altium Designer. Not yet fabricated or tested on hardware.
 
-![PCB top view](docs/pcb-top.png)
+![PCB top view](docs/AC_DC_rectifier_pcb_top.jpg)
 
 ## Overview
 
@@ -32,7 +32,7 @@ The 12 V and 5 V rails are fed from the filtered 24 V rail, not directly from th
 
 ## Schematic
 
-![Altium schematic](docs/schematic-altium.png)
+![Altium schematic](docs/AC_DC_rectier_schematic.png)
 
 - **Rectifier:** fuse, 10 ohm NTC thermistor (inrush limiting), Würth 7492551000 transformer, diode bridge, 2x 2200 uF bulk capacitors.
 - **24 V converter:** LTM8050 with a 107k / 10k divider and 10 uF capacitor on RUN/SS for input undervoltage lockout and soft start.
@@ -50,7 +50,7 @@ The 12 V and 5 V rails are fed from the filtered 24 V rail, not directly from th
 
 ## Simulation (LTspice)
 
-![LTspice schematic](docs/ltspice-schematic.png)
+![LTspice schematic](docs/AC_DC_rectifier_LTspice_circuit.jpg)
 
 The model uses a 311 V peak, 50 Hz source (220 VAC RMS), a 10 ohm source resistance, a coupled-inductor transformer (L1 = 49, L2 = 1.5, K = 0.999), a diode bridge, 2x 2200 uF bulk capacitors, and the three LTM8050 stages with the 24 V LC filter. Simulated loads:
 
@@ -64,7 +64,7 @@ Total simulated load: 20.5 W.
 
 ### Start-up result
 
-![Start-up waveforms](docs/startup-waveforms.png)
+![Start-up waveforms](docs/AC_Dc_rectifier_LTspice_Waveforms.jpg)
 
 - The DC bus charges up to about 47 V within roughly 80 ms.
 - All three rails come up cleanly in the first few milliseconds. The 24 V rail settles at 24 V, the 12 V rail at 12 V and the 5 V rail at 5 V, with no sustained oscillation.
@@ -75,7 +75,7 @@ Still to add: ripple measurements (in mV, zoomed in on the settled waveform), a 
 
 ## PCB
 
-![PCB bottom view](docs/pcb-bottom.png)
+![PCB bottom view](docs/AC_DC_rectifier_pcb_bottom.jpg)
 
 - The 24 V converter, rectifier, bulk capacitors, transformer, connectors and LEDs are on the top side.
 - The 12 V and 5 V converters are on the second side of the board.
