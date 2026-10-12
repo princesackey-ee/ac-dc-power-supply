@@ -32,7 +32,7 @@ The 12 V and 5 V rails are fed from the filtered 24 V rail, not directly from th
 
 ## Schematic
 
-![Altium schematic](docs/AC_DC_rectier_schematic.png)
+![Altium schematic](docs/AC_DC_rectifier_schematic.png)
 
 - **Rectifier:** fuse, 10 ohm NTC thermistor (inrush limiting), Würth 7492551000 transformer, diode bridge, 2x 2200 uF bulk capacitors.
 - **24 V converter:** LTM8050 with a 107k / 10k divider and 10 uF capacitor on RUN/SS for input undervoltage lockout and soft start.
@@ -64,7 +64,7 @@ Total simulated load: 20.5 W.
 
 ### Start-up result
 
-![Start-up waveforms](docs/AC_Dc_rectifier_LTspice_Waveforms.jpg)
+![Start-up waveforms](docs/AC_DC_rectifier_LTspice_Waveforms.jpg)
 
 - The DC bus charges up to about 47 V within roughly 80 ms.
 - All three rails come up cleanly in the first few milliseconds. The 24 V rail settles at 24 V, the 12 V rail at 12 V and the 5 V rail at 5 V, with no sustained oscillation.
